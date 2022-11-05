@@ -131,4 +131,17 @@ To run the default generator, cd into openfasoc/generators/temp-sense-gen/ and e
 
 `make sky130hd_temp`
 
+The default circuit’s physical design generation can be divided into three parts:
 
+1. Verilog generation
+
+2. RTL-to-GDS flow (OpenROAD)
+
+3. Post-layout verification (DRC and LVS)
+
+### Verilog Generation
+Running make sky130hd_temp (temp for “temperature sensor”) executes the temp-sense-gen.py script from temp-sense-gen/tools/. This file takes the input specifications from test.json and outputs Verilog files containing the description of the circuit.
+
+The generator starts from a Verilog template of the temperature sensor circuit, located in temp-sense-gen/src/. The .v template files have lines marked with @@, which are replaced according to the specifications.
+
+To replace these lines with the correct circuit elements, temp-sense-gen takes cells from the selected technology. The number of inverters in the ring oscillator and of HEADER cells in parallel are optimized using a nearest-neighbor approach with experimental data from models/modelfile.csv.
