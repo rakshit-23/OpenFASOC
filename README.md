@@ -53,3 +53,25 @@ To install OpenROAD:
 
   make
 ```
+## Installing Yosys
+Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Selected features and typical applications:
+
+Process almost any synthesizable Verilog-2005 design
+Built-in formal methods for checking properties and equivalence
+Mapping to ASIC standard cell libraries (in Liberty File Format)
+Mapping to Xilinx 7-Series and Lattice iCE40 and ECP5 FPGAs
+
+To install Yosys use the following commands
+``` sudo apt-get install build-essential clang bison flex \
+   libreadline-dev gawk tcl-dev libffi-dev git \
+   graphviz xdot pkg-config python3 libboost-system-dev \
+   libboost-python-dev libboost-filesystem-dev zlib1g-dev
+   
+   git clone https://github.com/YosysHQ/yosys.git
+
+   make
+
+   sudo make install 
+
+   make test
+```
