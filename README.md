@@ -151,3 +151,8 @@ In this file temperature is being varied from -20 C to 100 C.Based on the operat
 The generator starts from a Verilog template of the temperature sensor circuit, located in temp-sense-gen/src/. The .v template files have lines marked with @@, which are replaced according to the specifications.
 
 To replace these lines with the correct circuit elements, temp-sense-gen takes cells from the selected technology. The number of inverters in the ring oscillator and of HEADER cells in parallel are optimized using a nearest-neighbor approach with experimental data from models/modelfile.csv.
+
+To run the verilog generation, run the following command:
+
+`make sky130hd_temp_verilog`
+
