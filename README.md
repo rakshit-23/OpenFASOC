@@ -118,3 +118,10 @@ This generator creates a compact mixed-signal temperature sensor based on the to
   <img width="1000" height="500" src="https://user-images.githubusercontent.com/110079890/200105228-1ba0d839-3f1a-482f-9889-bb2cd1eb5048.png">
 </p>
 
+The physical implementation of the analog blocks in the circuit is done using two manually designed standard cells:
+
+HEADER cell, containing the transistors in subthreshold operation;
+
+SLC cell, containing the Split-Control Level Converter.
+
+
