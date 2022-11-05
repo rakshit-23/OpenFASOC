@@ -120,8 +120,15 @@ This generator creates a compact mixed-signal temperature sensor based on the to
 
 The physical implementation of the analog blocks in the circuit is done using two manually designed standard cells:
 
-HEADER cell, containing the transistors in subthreshold operation;
+1. HEADER cell, containing the transistors in subthreshold operation;
 
-SLC cell, containing the Split-Control Level Converter.
+2. SLC cell, containing the Split-Control Level Converter.
+
+## Generator flow
+To configure circuit specifications, modify the test.json specfile in the generators/temp-sense-gen/ folder.
+
+To run the default generator, cd into openfasoc/generators/temp-sense-gen/ and execute the following command:
+
+`make sky130hd_temp`
 
 
