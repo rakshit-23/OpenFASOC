@@ -98,3 +98,13 @@ cd magic/
 sudo make
 sudo make install
 ```
+###
+
+## Installing KLayout
+KLayout is a GDS and OASIS file viewer. Downlaod the latest version of the Klayout from here. Install the following dependencies: qt5-default, qttools5-dev, libqt5xmlpatterns5-dev, qtmultimedia5-dev, libqt5multimediawidgets5 and libqt5svg5-dev.
+
+```
+sudo apt-get install -y libqt5widgets5
+
+sudo dpkg -i klayout_0.27.11-1_amd64.deb
+```
