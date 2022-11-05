@@ -108,3 +108,13 @@ sudo apt-get install -y libqt5widgets5
 
 sudo dpkg -i klayout_0.27.11-1_amd64.deb
 ```
+# Temperature Sensor Generator
+An overview of how the Temperature Sensor Generator (temp-sense-gen) works internally in OpenFASoC
+
+## Circuit
+This generator creates a compact mixed-signal temperature sensor based on the topology from this paper. It consists of a ring oscillator whose frequency is controlled by the voltage drop over a MOSFET operating in subthreshold regime, where its dependency on temperature is exponential.
+
+<p align="center">
+  <img width="1000" height="500" src="https://user-images.githubusercontent.com/110079890/200105228-1ba0d839-3f1a-482f-9889-bb2cd1eb5048.png">
+</p>
+
