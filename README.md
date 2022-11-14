@@ -156,3 +156,8 @@ To run the verilog generation, run the following command:
 
 `make sky130hd_temp_verilog`
 
+#### Directory where verilog files are generated
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/201682391-8468fd05-dfe6-408e-a94d-54da7b8c6a2c.png">
+</p>
+After running the `make sky130hd_temp_verilog` command the verilog files of counter.v, TEMP_ANALOG_hv.nl.v, TEMP_ANALOG_lv.nl.v are created in the src folder.
