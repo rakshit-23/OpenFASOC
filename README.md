@@ -230,3 +230,5 @@ The Detail Placement power and area report is shown below:
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207370865-49874446-01d1-499b-9ba3-0b531b416b04.png">
 </p>
 
+### Routing
+
