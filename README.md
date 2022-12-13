@@ -220,12 +220,12 @@ The tempsenseInst_domain_insts.txt file contains all instances to be placed in t
 ### 3.2.3 Placement
 Placement takes place after the floorplan is ready and has two phases: global placement and detailed placement. The output of this phase will have all instances placed in their corresponding voltage domain, ready for routing.
 
-The Global Placement power and area report is shown below:
+#### The Global Placement power and area report is shown below:
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207367846-cd120f44-d050-44ab-ad64-b3be19542531.png">
 </p>
 
-The Detail Placement power and area report is shown below:
+#### The Detail Placement power and area report is shown below:
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207370865-49874446-01d1-499b-9ba3-0b531b416b04.png">
 </p>
@@ -238,17 +238,17 @@ Routing is also divided into two phases: global routing and detailed routing. Ri
 
 This script sources two other files: add_ndr_rules.tcl, which adds an NDR rule to the VIN net to improve routes that connect both voltage domains, and create_custom_connections.tcl, which creates the connection between the VIN net and the HEADER instances.
 
-The Global route power and area report is shown below:
+#### The Global route power and area report is shown below:
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207372763-4d811680-c1f7-432d-84e8-b3c7a6f7e8cf.png">
 </p>
 
-The finished power and area report is shown below:
+#### The finished power and area report is shown below:
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207377437-e6d78adc-05cb-476f-8751-db3d731d5dc7.png">
 </p>
 
-Final layout after routing:
+#### Final layout after routing:
 
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207379770-e9cb8f5f-b8ed-4ace-880e-266944286578.png">
