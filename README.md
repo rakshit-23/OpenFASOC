@@ -225,5 +225,8 @@ The Global Placement power and area report is shown below:
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207367846-cd120f44-d050-44ab-ad64-b3be19542531.png">
 </p>
 
-
+The Detail Placement power and area report is shown below:
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207370865-49874446-01d1-499b-9ba3-0b531b416b04.png">
+</p>
 
