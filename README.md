@@ -247,3 +247,9 @@ The finished power and area report is shown below:
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207377437-e6d78adc-05cb-476f-8751-db3d731d5dc7.png">
 </p>
+
+Final layout after routing:
+
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207379770-e9cb8f5f-b8ed-4ace-880e-266944286578.png">
+</p>
