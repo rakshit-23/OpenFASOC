@@ -243,4 +243,7 @@ The Global route power and area report is shown below:
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207372763-4d811680-c1f7-432d-84e8-b3c7a6f7e8cf.png">
 </p>
 
-
+The finished power and area report is shown below:
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207377437-e6d78adc-05cb-476f-8751-db3d731d5dc7.png">
+</p>
