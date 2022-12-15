@@ -314,6 +314,12 @@ Frequency Divider is used to divide the frequency which is otherwise a multiplie
   <img width="500" height="500" src="https://user-images.githubusercontent.com/110079890/207942515-55ba0ff6-584e-449a-9833-9ab5cb839498.png">
 </p>
 
+## 4.2 Auxiliary Cells
+The auxiliary cells used in the PLL are charge pump and voltage controlled oscillators. They are present inside the directory shown below:
+
+<p align="center">
+  <img width="1500" height="400" src="https://user-images.githubusercontent.com/110079890/207943636-7cf9d98f-59fc-4592-acef-8b59317e475d.png">
+</p>
 
 # Author
 - Rakshit Bhatia, M.Tech Student at IIIT Bangalore
