@@ -191,6 +191,11 @@ Here, using the generic template, extra blocks of counter, TEMP_ANALOG_hv.nl.v, 
 
 The OpenROAD Flow starts with a flow configuration file config.mk, the chosen platform (sky130hd, for example) and the Verilog files are generated from the previous part.
 
+The config.mk file is shown below:
+<p align="center">
+  <img width="1000" height="1000" src="https://user-images.githubusercontent.com/110079890/207945871-6812a6ed-9e19-48c8-8ea0-6b6689a6d9a0.png">
+</p>
+
 The synthesis is run using Yosys to find the appropriate circuit implementation from the available cells in the platform. The synthesized verilog netlist is saved as shown in the below figure.
 <p align="center">
   <img width="2000" height="400" src="https://user-images.githubusercontent.com/110079890/207364136-3c0d4fe7-7620-4b9c-9329-225b65925228.png">
@@ -319,6 +324,17 @@ The auxiliary cells used in the PLL are charge pump and voltage controlled oscil
 
 <p align="center">
   <img width="1500" height="400" src="https://user-images.githubusercontent.com/110079890/207943636-7cf9d98f-59fc-4592-acef-8b59317e475d.png">
+</p>
+
+The layout of charge pump auxiliary cell is shown below:
+<p align="center">
+  <img width="1500" height="500" src="https://user-images.githubusercontent.com/110079890/207945038-ddc91ae4-7781-44fe-8348-9dc4da71c1db.png">
+</p>
+
+The layout of voltage controlled oscillator auxiliary cell is shown below:
+
+<p align="center">
+  <img width="1500" height="500" src="https://user-images.githubusercontent.com/110079890/207945444-c9448b2b-2d8f-4037-8523-20d0ef77f222.png">
 </p>
 
 # Author
