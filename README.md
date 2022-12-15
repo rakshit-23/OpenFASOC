@@ -263,3 +263,11 @@ In DRC, Magic takes the generated GDS file and checks for failed constraints. A 
 In LVS, Magic takes the generated GDS file and extracts its netlist to compare with the original circuit netlist, in order to verify if the physical implementation was done correctly. Files generated from the layout extraction are created under temp-sense-gen/flow/objects/.
 
 Netgen is then used to run the comparison, outputting a report under temp-sense-gen/flow/reports/.
+
+
+# Author
+- Rakshit Bhatia, M.Tech Student at IIIT Bangalore
+
+# Acknowledgements
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+- Madhav Rao, Associate Professor, IIIT Bangalore
