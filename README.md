@@ -253,3 +253,13 @@ This script sources two other files: add_ndr_rules.tcl, which adds an NDR rule t
 <p align="center">
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207379770-e9cb8f5f-b8ed-4ace-880e-266944286578.png">
 </p>
+
+
+### 3.2.5 Post-layout verification
+
+After generating the design, OpenFASoC runs DRC and LVS to check that the circuit is manufacturable and corresponds to the specified design. In flow/Makefile, the targets magic_drc and netgen_lvs are run using make.
+In DRC, Magic takes the generated GDS file and checks for failed constraints. A report is written under temp-sense-gen/flow/reports/ with any errors found.
+
+In LVS, Magic takes the generated GDS file and extracts its netlist to compare with the original circuit netlist, in order to verify if the physical implementation was done correctly. Files generated from the layout extraction are created under temp-sense-gen/flow/objects/.
+
+Netgen is then used to run the comparison, outputting a report under temp-sense-gen/flow/reports/.
