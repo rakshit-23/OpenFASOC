@@ -196,7 +196,8 @@ The synthesis is run using Yosys to find the appropriate circuit implementation 
   <img width="2000" height="400" src="https://user-images.githubusercontent.com/110079890/207364136-3c0d4fe7-7620-4b9c-9329-225b65925228.png">
 </p>
 
-Then, the floorplan for the physical design is generated with OpenROAD, which requires a description of the power delivery network in pdn.cfg.
+### 3.2.3 Floorplan
+The floorplan for the physical design is generated with OpenROAD, which requires a description of the power delivery network in pdn.cfg.
 
 The floorplan final power report is shown below:
 <p align="center">
@@ -217,7 +218,7 @@ And finally, lines #40 to #42 will source read_domain_instances.tcl, a script th
 
 The tempsenseInst_domain_insts.txt file contains all instances to be placed in the TEMP_ANALOG domain (VIN voltage tracks). These cells are the components of the ring oscillator, including the inverters whose quantity may vary according to the optimization results. Thus, this file actually gets generated during temp-sense-gen.py.
 
-### 3.2.3 Placement
+### 3.2.4 Placement
 Placement takes place after the floorplan is ready and has two phases: global placement and detailed placement. The output of this phase will have all instances placed in their corresponding voltage domain, ready for routing.
 
 #### The Global Placement power and area report is shown below:
@@ -230,7 +231,7 @@ Placement takes place after the floorplan is ready and has two phases: global pl
   <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207370865-49874446-01d1-499b-9ba3-0b531b416b04.png">
 </p>
 
-### 3.2.4 Routing
+### 3.2.5 Routing
 Routing is also divided into two phases: global routing and detailed routing. Right before global routing, OpenFASoC calls pre_global_route.tcl:
 <p align="center">
   <img width="1000" height="500" src="https://user-images.githubusercontent.com/110079890/207374779-15b542d2-9b53-4b6d-9870-5c63a7b8d2fe.png">
@@ -255,7 +256,7 @@ This script sources two other files: add_ndr_rules.tcl, which adds an NDR rule t
 </p>
 
 
-### 3.2.5 Post-layout verification
+### 3.2.6 Post-layout verification
 
 After generating the design, OpenFASoC runs DRC and LVS to check that the circuit is manufacturable and corresponds to the specified design. In flow/Makefile, the targets magic_drc and netgen_lvs are run using make.
 In DRC, Magic takes the generated GDS file and checks for failed constraints. A report is written under temp-sense-gen/flow/reports/ with any errors found.
