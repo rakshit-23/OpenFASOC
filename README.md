@@ -265,6 +265,55 @@ In LVS, Magic takes the generated GDS file and extracts its netlist to compare w
 
 Netgen is then used to run the comparison, outputting a report under temp-sense-gen/flow/reports/.
 
+# 4. Phase Locked Loop
+
+## 4.1 Circuit
+A Phase Locked Loop (PLL) consists of
+
+- Phase Detector
+- Charge Pump
+- Voltage Controlled Oscillator
+- Frequency Divider
+
+### 4.1.2 Phase Detector
+
+Phase detector produces two DC voltages namely UP and DOWN, which is proportional to the phase difference between the input signal(Vref) and feedback (output) signal(Vout). If the Vref phase is lagging with respect to Vout then UP signal remains high to the duration of their phase difference and the DOWN signal remains low. If the Vref phase is leading with respect to Vout then DOWN signal remains high to the duration of their phase difference and the UP signal remains low.
+
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207939908-c1b35785-72c9-4ed6-b1ee-2b0df30c1453.png">
+</p>
+
+The Phase detector is constructed using two negative edge triggered D Flip-Flops and a AND gate, which makes it a digital block.
+
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/110079890/207940974-e5e30949-f028-448e-af3b-838210317e60.png">
+</p>
+
+### 4.1.2 Charge Pump
+Charge Pump is used to convert the digital measure of the phase difference done in the Phase Detector into a analog control signal, which is used to control the Voltage Controlled Oscillator in the next stage. In the construction of the Charge Pump we use a current steering model which makes it a Analog block. Here when the UP signal is high the current flows from Vdd to output which charges the load capacitance. When the DOWN signal is high the current flows from load capacitance to ground which is discharging of the current.
+
+<p align="center">
+  <img width="700" height="700" src="https://user-images.githubusercontent.com/110079890/207941411-888377f7-3f22-4fdd-9813-b85cf2a47f0d.png">
+</p>
+
+<p align="center">
+  <img width="700" height="800" src="https://user-images.githubusercontent.com/110079890/207941578-c12ef6e4-eb75-43d1-a53c-a87b7badc5c1.png">
+</p>
+
+### 4.1.3 Voltage Controlled Oscillator
+The Output of the Charge Pump acts as a Control signal to the Voltage Controlled Oscillator.The VCO generates a DC signal, the amplitude of which is proportional to the amplitude of output of Charge Pump Control Signal. Here the adjustment in the output frequency/phase of VCO is made until it shows equivalency with the input signal frequency/phase. The VCO is contructed using two current mirrors and a ring Oscillator which makes it a Analog block. The control signal is used as an input to these current source(mirrors) to control the current supply which in turn control the delay of the circuit. By controlling the delay we are basically controlling the frequency of the Oscillator which makes it frequency flexible.
+
+<p align="center">
+  <img width="600" height="500" src="https://user-images.githubusercontent.com/110079890/207942242-20e09acc-7ed0-4b65-a109-69b5d3b02b91.png">
+</p>
+
+### 4.1.4 Frequency Divider
+Frequency Divider is used to divide the frequency which is otherwise a multiplier in time of the Output voltage from the Voltage Controlled Oscillator and is feedback as an input to the Phase Detector, which is then compared with the Vref input signal in the Phase Detector stage. The Frequency Divider is constructed using a series of Toggle Flip-Flops, which makes it a complete Digital block.
+
+<p align="center">
+  <img width="500" height="500" src="https://user-images.githubusercontent.com/110079890/207942515-55ba0ff6-584e-449a-9833-9ab5cb839498.png">
+</p>
+
 
 # Author
 - Rakshit Bhatia, M.Tech Student at IIIT Bangalore
@@ -272,3 +321,4 @@ Netgen is then used to run the comparison, outputting a report under temp-sense-
 # Acknowledgements
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 - Madhav Rao, Associate Professor, IIIT Bangalore
+- Tejas B N, M.Tech Student at IIIT Bangalore
